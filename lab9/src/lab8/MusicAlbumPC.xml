@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="lab8.entity.Album" table="albums" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer"/>
+        </id>
+        <property name="name">
+            <column name="name" sql-type="varchar(100)" length="100"/>
+        </property>
+        <property name="artistId">
+            <column name="artist_id" sql-type="integer"/>
+        </property>
+        <property name="releaseYear">
+            <column name="release_year" sql-type="integer" not-null="true"/>
+        </property>
+        <join table="albums" optional="true" schema="" catalog="">
+            <key>
+                <column name="artist_id"/>
+            </key>
+        </join>
+    </class>
+    <class name="lab8.entity.Artist" table="artists" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer"/>
+        </id>
+        <property name="name">
+            <column name="name" sql-type="varchar(100)" length="100"/>
+        </property>
+        <property name="country">
+            <column name="country" sql-type="varchar(100)" length="100" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
