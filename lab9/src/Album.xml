@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+        version="2.0">
+
+    <entity class="lab8.entity.Album">
+        <table name="albums" schema="" catalog=""/>
+        <attributes>
+            <id name="id">
+                <column name="id" precision="-1"/>
+            </id>
+            <basic name="name">
+                <column name="name" length="100"/>
+            </basic>
+            <basic name="artistId">
+                <column name="artist_id" precision="-1"/>
+            </basic>
+            <basic name="releaseYear">
+                <column name="release_year" nullable="false" precision="-1"/>
+            </basic>
+        </attributes>
+    </entity>
+</entity-mappings>
